@@ -4,7 +4,14 @@ public class Human {
     private String town;
     private String jobTitle;
 
-    public  Human (String name, int yearOfBirth, String town, String jobTitle) {
+    public Human(String name, int yearOfBirth, String town, String jobTitle) {
+        if (name == null){
+            name = "информация не указана";
+        } else if (town == null) {
+            town = "информация не указана";
+        } else if (jobTitle == null){
+            jobTitle = "Информация не указана";
+        }
         this.name = name;
         this.yearOfBirth = yearOfBirth;
         this.town = town;
@@ -16,6 +23,11 @@ public class Human {
     }
 
     public int getYearOfBirth() {
+        if (yearOfBirth >= 0) {
+            this.yearOfBirth = yearOfBirth;
+        } else {
+            this.yearOfBirth = Math.abs(yearOfBirth);
+        }
         return this.yearOfBirth;
     }
 
@@ -23,7 +35,7 @@ public class Human {
         return this.town;
     }
 
-    public  String getJobTitle () {
+    public String getJobTitle() {
         return this.jobTitle;
     }
 
@@ -31,5 +43,6 @@ public class Human {
     public String toString() {
         return "Привет! Меня зовут " + getName() + ". Я из города " + getTown() + ". Я родился " + getYearOfBirth() + " в году. Я работаю на должности: " + getJobTitle() + ". Будем знакомы!";
     }
+
 
 }
