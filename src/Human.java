@@ -5,13 +5,6 @@ public class Human {
     private String jobTitle;
 
     public Human(String name, int yearOfBirth, String town, String jobTitle) {
-        if (name == null){
-            name = "информация не указана";
-        } else if (town == null) {
-            town = "информация не указана";
-        } else if (jobTitle == null){
-            jobTitle = "Информация не указана";
-        }
         this.name = name;
         this.yearOfBirth = yearOfBirth;
         this.town = town;
@@ -31,8 +24,29 @@ public class Human {
         return this.yearOfBirth;
     }
 
+    public void  setYearOfBirth(int yearOfBirth) {
+        if (yearOfBirth < 0) {
+            this.yearOfBirth = 0;
+        } else {
+            this.yearOfBirth = yearOfBirth;
+        }
+    }
+
     public String getTown() {
         return this.town;
+    }
+
+    public void setTown (String town) {
+        if (town != null && !town.isEmpty() && !town.isBlank()) {
+            this.town = town;
+        } else {
+            this.town = "информация не указана";
+        }
+    }
+
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
     }
 
     public String getJobTitle() {

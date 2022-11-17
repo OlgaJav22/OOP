@@ -10,6 +10,8 @@ public class Main {
         Human katya = new Human("Катя", -1992, "Калининград", "продакт-менеджером");
         Human artem = new Human("Артем", -1995, "Москв", "Диретором по развитию бизнеса");
 
+        maksim.setTown("Подольск");
+        anna.setYearOfBirth(-29);
         System.out.println(maksim);
         System.out.println(anna);
         System.out.println(katya);
