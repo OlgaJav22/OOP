@@ -9,6 +9,7 @@ public class Flower {
     private double cost;
     public int lifeSpan;
     private static int counter = 0;
+
     private int id;
 
     public Flower(String flowerName, String flowerColor, String country, double cost, int lifeSpan) {
@@ -22,12 +23,13 @@ public class Flower {
             this.lifeSpan = 3;
         }
         counter++;
-        id = counter;
-
+        this.id = counter;
     }
 
 
-
+    public  int getCounter() {
+        return counter;
+    }
     public int getId() {
         return id;
     }
@@ -80,6 +82,7 @@ public class Flower {
     public int getLifeSpan() {
         return this.lifeSpan;
     }
+
 
     public void setLifeSpan(int lifeSpan) {
         if (lifeSpan > 0) {

@@ -86,6 +86,7 @@ public class Main {
 
         System.out.println("Цена за букет: " + calculateSumCost() + " рублей ");
         System.out.println("Срок стояния букета: " + getMInLifeSpan(bouquet));
+        System.out.println(pionFlower.getCounter());
 
     }
 
@@ -109,4 +110,5 @@ public class Main {
         }
         return min;
     }
+
 }
