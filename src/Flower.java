@@ -7,11 +7,11 @@ public class Flower {
     private String flowerColor;
     private String country;
     private double cost;
-    public Integer lifeSpan;
+    public int lifeSpan;
     private static int counter = 0;
     private int id;
 
-    public Flower(String flowerName, String flowerColor, String country, double cost, Integer lifeSpan) {
+    public Flower(String flowerName, String flowerColor, String country, double cost, int lifeSpan) {
         this.flowerName = flowerName;
         this.flowerColor = flowerColor;
         this.country = country;
@@ -77,6 +77,18 @@ public class Flower {
         }
     }
 
+    public int getLifeSpan() {
+        return this.lifeSpan;
+    }
+
+    public void setLifeSpan(int lifeSpan) {
+        if (lifeSpan > 0) {
+            this.lifeSpan = lifeSpan;
+        } else {
+            this.lifeSpan = 3;
+        }
+    }
+
     Flower[] getBouquet() {
         if (bouquet == null) {
             bouquet = new Flower[0];
@@ -89,20 +101,6 @@ public class Flower {
         this.bouquet = Arrays.copyOf(getBouquet(), getBouquet().length + 1);
         this.bouquet[this.bouquet.length - 1] = bouquets;
     }
-
-//    public Flower findFlowerBouquet(int counter) {
-//        Flower flower = addBouquet(Flower flower);
-//        counter = 0;
-//        if (getId() != flower.id) {
-//            this.id = flower.id++;
-//            this.id = counter++;
-//        } else {
-//            this.id = flower.id;
-//            this.id = counter;
-//        }
-//        return counter;
-//    }
-
 
 
 
